@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://80da6cv1ky3g"]
+[gd_scene load_steps=18 format=3 uid="uid://80da6cv1ky3g"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_wpdvn"]
 [ext_resource type="Script" path="res://Jump.gd" id="2_8xdfk"]
 [ext_resource type="PackedScene" uid="uid://pt0fx8p0j1fd" path="res://player.tscn" id="2_nhqmx"]
+[ext_resource type="Script" path="res://PPMovement3d.gd" id="4_o40n0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qkh3f"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -209,6 +210,7 @@ autostart = true
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_nhqmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40615, 1.83853, 1.20782)
+script = ExtResource("4_o40n0")
 
 [connection signal="body_entered" from="PrimeiraPessoa/Jump/Area3D" to="PrimeiraPessoa/Jump" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
